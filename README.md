@@ -68,7 +68,7 @@ Tetragon → Wazuh → SIEM Correlation
 ```md
 ## 📊 Architecture Diagram
 
-```
+```text
                 +----------------------+
                 |      Clients         |
                 | (Tenant A / B)       |
@@ -99,7 +99,8 @@ Tetragon → Wazuh → SIEM Correlation
           |                                 |
       Telegram                          Feishu
    Alert Channel                   Alert Channel
-   ```
+
+```
 ---
 
 ## 🏗️ Multi-Tenant Design
