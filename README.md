@@ -54,6 +54,90 @@ Tetragon → Wazuh → SIEM Correlation
 
 ---
 
+## 🧱 Tech Stack
+
+- SIEM: Wazuh
+- Runtime Security: Falco, Tetragon
+- Cloud: AWS (CloudTrail, Config, CloudWatch, Lambda)
+- Storage: OpenSearch
+- Alerting: Telegram, Feishu
+- Automation: AWS Lambda
+- Extensibility: Retool, Directus, n8n
+
+---
+
+## 📊 Architecture Diagram
+
+```text
+                +----------------------+
+                |      Clients         |
+                | (Tenant A / B)       |
+                +----------+-----------+
+                           |
+                        Agents
+                           |
+                    +------v------+
+                    |   Wazuh     |
+                    |  Manager    |
+                    +------+------+
+                           |
+        +------------------+------------------+
+        |                                     |
++-------v--------+                    +--------v--------+
+|   OpenSearch   |                    |     Falco       |
+|  (Log Storage) |                    | Runtime Security|
++-------+--------+                    +--------+--------+
+        |                                     |
+        +------------------+------------------+
+                           |
+                    +------v------+
+                    | Automation  |
+                    | (Lambda)    |
+                    +------+------+
+                           |
+          +----------------+----------------+
+          |                                 |
+      Telegram                          Feishu
+   Alert Channel                   Alert Channel ```
+
+---
+
+## 🏗️ Multi-Tenant Design
+
+This platform is designed with multi-tenant capability in mind, enabling isolation and scalability for multiple clients.
+
+- **Agent Group Isolation**  
+  Each client is assigned to a dedicated Wazuh agent group for logical separation.
+
+- **Index-Level Segmentation (OpenSearch)**  
+  Logs are stored in separate index patterns per tenant to ensure data isolation.
+
+- **Tenant-Aware Alert Routing**  
+  Alerts are tagged with tenant identifiers and routed to dedicated notification channels.
+
+- **RBAC-Ready Dashboard Access**  
+  Designed to integrate with role-based access control systems for per-tenant dashboard visibility.
+
+- **Data Partitioning Strategy**  
+  Supports tenant-based filtering (e.g., tenant_id) for scalable multi-client environments.
+
+---
+
+## 🔧 Platform Extensibility
+
+This system can be extended into a full MSSP platform with:
+
+- **Admin / Client Portal** (Retool / Directus)  
+  For tenant management, alert visualization, and access control
+
+- **Workflow Automation** (n8n)  
+  For incident response and alert orchestration
+
+- **Billing Integration** (WHMCS)  
+  For MSSP commercial operations
+
+- **Infrastructure as Code** (Terraform / Docker)  
+  For scalable and repeatable deployments
 ## 🔐 Key Capabilities
 
 ### 1. SIEM & Log Analysis (Wazuh)
@@ -126,14 +210,6 @@ Tetragon → Wazuh → SIEM Correlation
 
 ---
 
-## 🏗️ Multi-Tenant Design (Concept)
-
-- Agent grouping per client  
-- Index-based data isolation (OpenSearch)  
-- Alert routing per tenant  
-- RBAC-ready (can integrate with Retool / Directus)  
-
----
 
 ## 📦 Deliverables Capability
 
