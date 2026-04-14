@@ -60,7 +60,7 @@ This project demonstrates a production-grade security monitoring and automation 
 - AWS Config compliance monitoring  
 - CloudWatch anomaly detection  
 
-📸 **AWS Alert → Feishu**
+📸 **AWS Alert → Feishu(Lark)**
 
 ![AWS Alert](images/aws-alert-lark.png)
 
@@ -71,7 +71,7 @@ This project demonstrates a production-grade security monitoring and automation 
 ### 4. Automated Alert Pipeline
 
 - Serverless alert processing using AWS Lambda  
-- Real-time notification to Feishu / Telegram  
+- Real-time notification to Feishu(Lark) / Telegram  
 - Structured alert formatting and routing  
 
 📸 **Wazuh → Telegram Alert**
