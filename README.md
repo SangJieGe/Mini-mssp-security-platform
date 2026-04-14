@@ -98,7 +98,7 @@ Tetragon → Wazuh → SIEM Correlation
           +----------------+----------------+
           |                                 |
       Telegram                          Feishu
-   Alert Channel                   Alert Channel ```
+   Alert Channel                   Alert Channel 
 
 ---
 
@@ -258,3 +258,21 @@ Happy to walk through the architecture or adapt it to your requirements.
 Note: This repository is for demonstration purposes only. 
 The architecture and screenshots are based on a real production system, 
 but sensitive details have been removed or anonymized.
+
+---
+## 🛡️ Additional Security Experience
+
+Beyond this platform, I have also worked on broader security engineering and DevSecOps practices:
+
+- **Automated Vulnerability Scanning (DAST)**  
+  Built automated scanning workflows using OWASP ZAP for dynamic application security testing.
+
+- **DevSecOps Pipeline Integration**  
+  Implemented SAST, DAST, API security testing, and container scanning within GitLab CI/CD pipelines.
+
+- **Secrets Detection & Remediation**  
+  Used Gitleaks integrated with Elasticsearch to scan and identify thousands of exposed secrets (API keys, credentials), and collaborated with development and operations teams to remediate risks.
+
+- **Security Operations & Hardening**  
+  Experience in SOC analysis, vulnerability assessment, and system hardening across cloud and container environments.
+
